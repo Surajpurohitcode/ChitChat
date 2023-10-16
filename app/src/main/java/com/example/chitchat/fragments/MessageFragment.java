@@ -157,11 +157,10 @@ public class MessageFragment extends Fragment {
                     {
                         UserModel model = snapshot1.getValue(UserModel.class);
 
-                        if (arrayList.contains(model.getPhoneNumber()) && model.getLastMessage() !=null)
+                        if (arrayList.contains(model.getPhoneNumber()) && model.getLastMessage() !=null && !model.getPhoneNumber().equals(mAuth.getCurrentUser().getPhoneNumber()))
                         {
                             userArrayList.add(model);
-                            binding.isEmptyLis.setVisibility(View.GONE);
-                            binding.usersChatList.setVisibility(View.VISIBLE);
+                            checkUserList();
 
                         }
 
@@ -178,6 +177,18 @@ public class MessageFragment extends Fragment {
                 }
             });
 
+        }
+    }
+
+    private void checkUserList() {
+        if (userArrayList.isEmpty())
+        {
+            binding.isEmptyLis.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            binding.isEmptyLis.setVisibility(View.GONE);
+            binding.usersChatList.setVisibility(View.VISIBLE);
         }
     }
 

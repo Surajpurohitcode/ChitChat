@@ -29,6 +29,7 @@
                 android:id="@+id/users_profile_img"
                 android:layout_width="64dp"
                 android:layout_height="64dp"
+                app:civ_border="false"
                 android:src="@drawable/profile_icon"
                 android:layout_gravity="center_vertical"
                 />

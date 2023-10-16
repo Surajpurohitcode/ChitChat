@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +15,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChitChat"
         tools:targetApi="31">
+        <activity
+            android:name=".RecevierProileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecevierProfileActivity"
+            android:exported="false"
+            android:label="@string/title_activity_recevier_profile"
+            android:theme="@style/Theme.ChitChat" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -49,7 +57,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".OnboardingActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="false" />

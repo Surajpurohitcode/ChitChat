@@ -10,13 +10,10 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.chitchat.adapter.MessageAdpter;
 import com.example.chitchat.databinding.ActivityChatBinding;
-import com.example.chitchat.fragments.MessageFragment;
-import com.example.chitchat.fragments.RecevierProfileFragment;
 import com.example.chitchat.model.MessageModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -71,9 +68,8 @@ public class ChatActivity extends AppCompatActivity {
         binding.recevierProfileCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ChatActivity.this, RecevierProfileFragment.class);
-                intent.putExtra("recevier_profileImg",profileImage);
-                intent.putExtra("recevier_username",name);
+                Intent intent = new Intent(ChatActivity.this, RecevierProileActivity.class);
+                intent.putExtra("recevierUidprofile",receiverUid);
                 startActivity(intent);
             }
         });
